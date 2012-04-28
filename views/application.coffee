@@ -8,5 +8,5 @@ update_hello_world = ->
             $("#hello_world").html data
 
 $ ->
-    $("#input_form input").change ->
+    $("#input_form input").keyup ->
         update_hello_world()
