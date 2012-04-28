@@ -1,9 +1,9 @@
-%form.form-horizontal.well
+%form.form-horizontal.well#input_form
   - @attributes.each do |attribute|
     .control-group
       %label.control-label= attribute[:title]
       .controls
-        %input{:type => 'text', :class => 'span3', :placeholder => attribute[:default], :class => 'input-xlarge', :id => "attrs[#{attribute[:key]}]"}
+        %input{:type => 'text', :class => 'span3', :placeholder => attribute[:default], :class => 'input-xlarge', :id => attribute[:key], :name => "attrs[#{attribute[:key]}]"}
         - if attribute[:hint]
           %p.help-block= attribute[:hint]
 %form.well

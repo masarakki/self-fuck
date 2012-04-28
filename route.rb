@@ -3,6 +3,7 @@
 
 require 'sinatra'
 require 'haml'
+require 'active_support/hash_with_indifferent_access'
 
 get '/' do
   @attributes = [
@@ -16,4 +17,13 @@ get '/' do
     {:title => '入力する', :key => :get, :default => ','}
   ]
   haml :index
+end
+
+post '/hello' do
+  require 'r-fxxk'
+  BrainFuck.new(params[:attrs].symbolize_keys).hello_world
+end
+
+get '/application.js' do
+  coffee :application
 end
