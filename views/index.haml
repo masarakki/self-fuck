@@ -1,12 +1,20 @@
-%form.form-horizontal.well#input_form
-  - @attributes.each do |attribute|
-    .control-group
-      %label.control-label= attribute[:title]
-      .controls
-        %input{:type => 'text', :class => 'span3', :placeholder => attribute[:default], :class => 'input-xlarge', :id => attribute[:key], :name => "attrs[#{attribute[:key]}]"}
-        - if attribute[:hint]
-          %p.help-block= attribute[:hint]
+.row
+  .span6
+    .well
+      %form.form-horizontal#input_form
+        - @attributes.each do |attribute|
+          .control-group
+            %label.control-label= attribute[:title]
+            .controls
+              %input{:type => 'text', :class => 'span2', :placeholder => attribute[:default], :id => attribute[:key], :name => "attrs[#{attribute[:key]}]"}
+              - if attribute[:hint]
+                %p.help-block= attribute[:hint]
+
+  .span6
+    .well
+      %h4 hello, world
+      %textarea#hello_world.span4
+
 %form.well
-  %h4
-    hello, world
-  %textarea#hello_world.span8
+  %h4 code
+  %textarea#code

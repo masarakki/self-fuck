@@ -4,6 +4,8 @@
 require 'sinatra'
 require 'haml'
 require 'active_support/hash_with_indifferent_access'
+require 'active_support/inflector'
+enable :sessions
 
 get '/' do
   @attributes = [
@@ -20,10 +22,23 @@ get '/' do
 end
 
 post '/hello' do
-  require 'r-fxxk'
-  BrainFuck.new(params[:attrs].symbolize_keys).hello_world
+  if params[:attrs]
+    require 'r-fxxk'
+    BrainFuck.new(params[:attrs].symbolize_keys).hello_world
+  end
 end
 
 get '/application.js' do
   coffee :application
+end
+
+post '/download' do
+  attrs = params[:attrs].each_pair.select{|key, value| value != ''}.map {|key, value| "#{key}: '#{value}'"}.join(", ")
+  code = <<END
+#!/usr/bin/env ruby
+require 'r-fxxk'
+
+BrainFuck.new(#{attrs}).fuck(ARGF.read)
+END
+code
 end
