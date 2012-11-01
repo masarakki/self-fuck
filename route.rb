@@ -24,7 +24,7 @@ end
 post '/hello' do
   if params[:attrs]
     require 'r-fxxk'
-    BrainFuck.new(params[:attrs].symbolize_keys).hello_world
+    Brainfuck.new(params[:attrs].symbolize_keys).hello_world
   end
 end
 
@@ -38,7 +38,7 @@ post '/download' do
 #!/usr/bin/env ruby
 require 'r-fxxk'
 
-BrainFuck.new(#{attrs}).fuck(ARGF.read)
+Brainfuck.new(#{attrs}).fuck(ARGF.read)
 END
 code
 end
