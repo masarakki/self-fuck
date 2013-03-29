@@ -1,10 +1,10 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'sinatra'
 gem 'r-fxxk'
 gem 'haml'
 gem 'coffee-script'
-gem 'active_support'
+gem 'activesupport'
 
 group :development, :test do
   gem 'rspec'
