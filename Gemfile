@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby ENV['CUSTOM_RUBY_VERSION'] if ENV['CUSTOM_RUBY_VERSION']
+
 gem 'sinatra'
 gem 'r-fxxk'
 gem 'haml'
@@ -11,4 +13,3 @@ group :development, :test do
   gem 'guard'
   gem 'shotgun'
 end
-
