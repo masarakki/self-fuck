@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 2.2.3
+script:
+  - bundle exec rubocop
+deploy:
+  provider: heroku
+  api_key:
+    secure: dVdFYD7z+mp5lYcLXEwQZPBUSftaX/6XVI0R7nrrwUSVhSJBJAYz6qPGPNcJcPeuDHNkUbMuhceWpoJKDPkamNnUU5mtD8ilrc3JYQoqp1LGjJDH4j0lg5U1NF5nr4aHwbRZXsJECwAO6+Whxvyzibiow0pTPqE7Bn7AB6BXlG4=

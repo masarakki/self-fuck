@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby ENV['CUSTOM_RUBY_VERSION'] if ENV['CUSTOM_RUBY_VERSION']
+ruby '2.2.3'
 
 gem 'sinatra'
 gem 'r-fxxk'
@@ -12,4 +12,7 @@ group :development, :test do
   gem 'rspec'
   gem 'guard'
   gem 'shotgun'
+  gem 'rubocop'
+  gem 'guard-rspec'
+  gem 'guard-rubocop'
 end
