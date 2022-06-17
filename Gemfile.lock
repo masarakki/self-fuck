@@ -15,6 +15,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    concurrent-ruby (1.1.10)
     diff-lcs (1.2.5)
     execjs (2.6.0)
     ffi (1.9.10)
@@ -38,7 +39,8 @@ GEM
       rubocop (~> 0.20)
     haml (4.0.7)
       tilt
-    i18n (0.7.0)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
     json (1.8.3)
     listen (3.0.5)
       rb-fsevent (>= 0.9.3)
